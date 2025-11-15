@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный Дашборд</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1><i class="fas fa-chart-line"></i> Умный Дашборд</h1>
+                <div class="header-controls">
+                    <button id="add-widget-btn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Добавить виджет
+                    </button>
+                    <button id="export-btn" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Экспорт
+                    </button>
+                    <button id="import-btn" class="btn btn-secondary">
+                        <i class="fas fa-upload"></i> Импорт
+                    </button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                </div>
+            </div>
+        </header>
+
+        <!-- Available Widgets Modal -->
+        <div id="widgets-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Доступные виджеты</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="widgets-list">
+                    <div class="available-widget" data-type="weather">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>Погода</span>
+                    </div>
+                    <div class="available-widget" data-type="currency">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Курсы валют</span>
+                    </div>
+                    <div class="available-widget" data-type="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <span>Случайная цитата</span>
+                    </div>
+                    <div class="available-widget" data-type="timer">
+                        <i class="fas fa-clock"></i>
+                        <span>Таймер Pomodoro</span>
+                    </div>
+                    <div class="available-widget" data-type="notes">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Заметки</span>
+                    </div>
+                    <div class="available-widget" data-type="whack_a_fish">
+                        <i class="fas fa-hammer"></i>
+                        <span>Ударь рыбку</span>
+                    </div>
+                    <div class="available-widget" data-type="memory_match">
+                        <i class="fas fa-brain"></i>
+                        <span>Морская память</span>
+                    </div>
+                    <div class="available-widget" data-type="treasure_hunt">
+                        <i class="fas fa-treasure-chest"></i>
+                        <span>Охотник за сокровищами</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div id="widgets-grid" class="widgets-grid">
+                <!-- Widgets will be added here dynamically -->
+            </div>
+
+            <div id="empty-state" class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <h3>Нет виджетов</h3>
+                <p>Добавьте первый виджет, чтобы начать работу</p>
+                <button id="add-first-widget" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Добавить виджет
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
